@@ -13,10 +13,10 @@ const Drivers = () => {
             ← Kembali ke Beranda
           </a>
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            Semua Pembalap <span className="text-primary">F1 2024</span>
+            Semua Pembalap <span className="text-primary">F1 2025</span>
           </h1>
           <p className="text-muted-foreground text-lg">
-            Daftar lengkap pembalap Formula 1 musim 2024
+            Daftar lengkap pembalap Formula 1 musim 2025
           </p>
         </div>
       </div>

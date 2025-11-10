@@ -216,7 +216,7 @@ const RaceCalendar = ({ limit, showViewMore = false }: RaceCalendarProps) => {
             Kalender <span className="text-primary">Balapan</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Jadwal lengkap Grand Prix musim 2024
+            Jadwal lengkap Grand Prix musim 2025
           </p>
         </div>
 

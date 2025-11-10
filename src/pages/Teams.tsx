@@ -16,7 +16,7 @@ const Teams = () => {
             Semua Tim <span className="text-primary">Konstruktor</span>
           </h1>
           <p className="text-muted-foreground text-lg">
-            Daftar lengkap tim konstruktor Formula 1 musim 2024
+            Daftar lengkap tim konstruktor Formula 1 musim 2025
           </p>
         </div>
       </div>
