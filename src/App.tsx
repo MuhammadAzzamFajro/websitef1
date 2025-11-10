@@ -10,6 +10,7 @@ import Schedule from "./pages/Schedule";
 import Standings from "./pages/Standings";
 import NotFound from "./pages/NotFound";
 
+
 const queryClient = new QueryClient();
 
 const App = () => (
