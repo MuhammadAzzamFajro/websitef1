@@ -172,7 +172,7 @@ const TeamsSection = ({ limit, showViewMore = false }: TeamsSectionProps) => {
         {showViewMore && (
           <div className="mt-12 text-center">
             <button
-              onClick={() => navigate("/team")}
+              onClick={() => navigate("/teams")}
               className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all h-11 px-8"
             >
               Lihat Selengkapnya
