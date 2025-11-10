@@ -5,26 +5,146 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const standings = [
-  { position: 1, name: "Lando Norris",        team: "McLaren",         points: 390, nationality: "Inggris" },
-  { position: 2, name: "Oscar Piastri",       team: "Mclaren",         points: 366, nationality: "Australia" },
-  { position: 3, name: "Max Verstappen",      team: "Red Bull Racing", points: 341, nationality: "Belanda" },
-  { position: 4, name: "George Russel",       team: "Mercedes",        points: 276, nationality: "Inggris" },
-  { position: 5, name: "Charles Leclerc",     team: "Ferrari",         points: 214, nationality: "Monaco" },
-  { position: 6,  name: "Lewis Hamilton",     team: "Ferrari",         points: 148, nationality: "Inggris" },
-  { position: 7,  name: "Kimi Antonelli",     team: "Mercedes",        points: 122, nationality: "Italia" },
-  { position: 8,  name: "Alexander Albon",    team: "Williams",        points: 73,  nationality: "Thailand" },
-  { position: 9,  name: "Nico Hülkenberg",    team: "Sauber",          points: 43,  nationality: "Jerman" },
-  { position:10,  name: "Isack Hadjar",       team: "Racing Bulls",    points: 43,  nationality: "Prancis" },
-  { position:11,  name: "Oliver Bearman",     team: "Haas",            points: 40,  nationality: "Inggris" },
-  { position:12,  name: "Fernando Alonso",    team: "Aston Martin",    points: 40,  nationality: "Spanyol" },
-  { position:13,  name: "Carlos Sainz",       team: "Williams",        points: 38,  nationality: "Spanyol" },
-  { position:14,  name: "Liam Lawson",        team: "Racing Bulls",    points: 36,  nationality: "New Zealand" },
-  { position:15,  name: "Lance Stroll",       team: "Aston Martin",    points: 32,  nationality: "Kanada" },
-  { position:16,  name: "Esteban Ocon",       team: "Haas",            points: 30,  nationality: "Prancis" },
-  { position:17,  name: "Yuki Tsunoda",       team: "Red Bull Racing", points: 28,  nationality: "Jepang" },
-  { position:18,  name: "Pierre Gasly",       team: "Alpine",          points: 22,  nationality: "Prancis" },
-  { position:19,  name: "Gabriel Bortoleto",  team: "Sauber",          points: 19,  nationality: "Brasil" },
-  { position:20,  name: "Franco Colapinto",   team: "Alpine",          points: 0,   nationality: "Argentina" }
+  {
+    position: 1,
+    name: "Lando Norris",
+    team: "McLaren",
+    points: 390,
+    nationality: "Inggris",
+  },
+  {
+    position: 2,
+    name: "Oscar Piastri",
+    team: "Mclaren",
+    points: 366,
+    nationality: "Australia",
+  },
+  {
+    position: 3,
+    name: "Max Verstappen",
+    team: "Red Bull Racing",
+    points: 341,
+    nationality: "Belanda",
+  },
+  {
+    position: 4,
+    name: "George Russel",
+    team: "Mercedes",
+    points: 276,
+    nationality: "Inggris",
+  },
+  {
+    position: 5,
+    name: "Charles Leclerc",
+    team: "Ferrari",
+    points: 214,
+    nationality: "Monaco",
+  },
+  {
+    position: 6,
+    name: "Lewis Hamilton",
+    team: "Ferrari",
+    points: 148,
+    nationality: "Inggris",
+  },
+  {
+    position: 7,
+    name: "Kimi Antonelli",
+    team: "Mercedes",
+    points: 122,
+    nationality: "Italia",
+  },
+  {
+    position: 8,
+    name: "Alexander Albon",
+    team: "Williams",
+    points: 73,
+    nationality: "Thailand",
+  },
+  {
+    position: 9,
+    name: "Nico Hülkenberg",
+    team: "Sauber",
+    points: 43,
+    nationality: "Jerman",
+  },
+  {
+    position: 10,
+    name: "Isack Hadjar",
+    team: "Racing Bulls",
+    points: 43,
+    nationality: "Prancis",
+  },
+  {
+    position: 11,
+    name: "Oliver Bearman",
+    team: "Haas",
+    points: 40,
+    nationality: "Inggris",
+  },
+  {
+    position: 12,
+    name: "Fernando Alonso",
+    team: "Aston Martin",
+    points: 40,
+    nationality: "Spanyol",
+  },
+  {
+    position: 13,
+    name: "Carlos Sainz",
+    team: "Williams",
+    points: 38,
+    nationality: "Spanyol",
+  },
+  {
+    position: 14,
+    name: "Liam Lawson",
+    team: "Racing Bulls",
+    points: 36,
+    nationality: "New Zealand",
+  },
+  {
+    position: 15,
+    name: "Lance Stroll",
+    team: "Aston Martin",
+    points: 32,
+    nationality: "Kanada",
+  },
+  {
+    position: 16,
+    name: "Esteban Ocon",
+    team: "Haas",
+    points: 30,
+    nationality: "Prancis",
+  },
+  {
+    position: 17,
+    name: "Yuki Tsunoda",
+    team: "Red Bull Racing",
+    points: 28,
+    nationality: "Jepang",
+  },
+  {
+    position: 18,
+    name: "Pierre Gasly",
+    team: "Alpine",
+    points: 22,
+    nationality: "Prancis",
+  },
+  {
+    position: 19,
+    name: "Gabriel Bortoleto",
+    team: "Sauber",
+    points: 19,
+    nationality: "Brasil",
+  },
+  {
+    position: 20,
+    name: "Franco Colapinto",
+    team: "Alpine",
+    points: 0,
+    nationality: "Argentina",
+  },
 ];
 
 interface StandingsPreviewProps {
@@ -32,8 +152,11 @@ interface StandingsPreviewProps {
   showViewMore?: boolean;
 }
 
-const StandingsPreview = ({ limit, showViewMore = false }: StandingsPreviewProps) => {
-  const navigate = useNavigate()
+const StandingsPreview = ({
+  limit,
+  showViewMore = false,
+}: StandingsPreviewProps) => {
+  const navigate = useNavigate();
   const displayedStandings = limit ? standings.slice(0, limit) : standings;
 
   return (
@@ -65,10 +188,10 @@ const StandingsPreview = ({ limit, showViewMore = false }: StandingsPreviewProps
               </thead>
               <tbody>
                 {displayedStandings.map((driver, index) => (
-                  <tr 
+                  <tr
                     key={driver.position}
                     className={`border-b border-border last:border-0 hover:bg-secondary/30 transition-colors ${
-                      index === 0 ? 'bg-primary/5' : ''
+                      index === 0 ? "bg-primary/5" : ""
                     }`}
                   >
                     <td className="p-4">
@@ -76,21 +199,29 @@ const StandingsPreview = ({ limit, showViewMore = false }: StandingsPreviewProps
                         {driver.position === 1 && (
                           <Trophy className="h-4 w-4 text-primary" />
                         )}
-                        <span className="font-bold text-lg">{driver.position}</span>
+                        <span className="font-bold text-lg">
+                          {driver.position}
+                        </span>
                       </div>
                     </td>
                     <td className="p-4">
                       <span className="font-semibold">{driver.name}</span>
                     </td>
                     <td className="p-4">
-                      <span className="text-muted-foreground text-sm">{driver.team}</span>
+                      <span className="text-muted-foreground text-sm">
+                        {driver.team}
+                      </span>
                     </td>
                     <td className="p-4 text-right">
-                      <span className="font-bold text-xl text-primary">{driver.points}</span>
+                      <span className="font-bold text-xl text-primary">
+                        {driver.points}
+                      </span>
                     </td>
                     <td className="p-4">
                       <div className="flex justify-center">
-                        <span className="text-sm font-medium">{driver.nationality}</span>
+                        <span className="text-sm font-medium">
+                          {driver.nationality}
+                        </span>
                       </div>
                     </td>
                   </tr>
@@ -101,10 +232,15 @@ const StandingsPreview = ({ limit, showViewMore = false }: StandingsPreviewProps
         </Card>
 
         {showViewMore && (
-      <Button onClick={() => navigate("/standings")}>
-        Lihat Selengkapnya
-      </Button>
-    )}
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => navigate("/schedule")}
+              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all h-11 px-8"
+            >
+              Lihat Selengkapnya
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
