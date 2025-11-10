@@ -1,73 +1,126 @@
-# Welcome to your Lovable project
+# websitef1
 
-## Project info
+A modern web application dedicated to Formula 1, providing details on drivers, teams, race schedules, and championship standings. Built with a focus on a responsive and dynamic user experience.
 
-**URL**: https://lovable.dev/projects/b02e4dd0-4905-421e-9851-ce4b3887fb7f
+## Features
 
-## How can I edit this code?
+*   **Drivers Section:** View details and profiles of Formula 1 drivers.
+*   **Teams Section:** Explore information about the F1 constructors and their history.
+*   **Race Calendar:** Access the complete F1 race schedule with dates and locations.
+*   **Standings Overview:** Check current driver and constructor championship standings.
+*   **Responsive UI:** Optimized for various screen sizes using a modern component library.
+*   **Interactive Components:** Engaging UI elements for a richer user experience.
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
+This project leverages a robust set of modern web development technologies:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b02e4dd0-4905-421e-9851-ce4b3887fb7f) and start prompting.
+*   **Frontend Framework:** [React](https://react.dev/)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/)
+*   **Build Tool:** [Vite](https://vitejs.dev/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
+*   **UI Components:** [Shadcn UI](https://ui.shadcn.com/) - Reusable and accessible UI components built with Radix UI and Tailwind CSS.
+*   **Linting:** [ESLint](https://eslint.org/) - For maintaining code quality and consistency.
+*   **Package Manager:** [npm](https://www.npmjs.com/) (alternatively [Bun](https://bun.sh/))
 
-Changes made via Lovable will be committed automatically to this repo.
+## Installation
 
-**Use your preferred IDE**
+To get this project up and running locally, follow these steps:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/websitef1.git
+    cd websitef1
+    ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2.  **Install dependencies:**
+    Using npm:
+    ```bash
+    npm install
+    ```
+    Alternatively, using Bun:
+    ```bash
+    bun install
+    ```
 
-Follow these steps:
+## Usage
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Development Server
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+To start the development server:
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Using npm:
+```bash
 npm run dev
 ```
+Alternatively, using Bun:
+```bash
+bun dev
+```
 
-**Edit a file directly in GitHub**
+This will typically open the application at `http://localhost:5173` (or another port if 5173 is in use).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+To create a production-ready build:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Using npm:
+```bash
+npm run build
+```
+Alternatively, using Bun:
+```bash
+bun build
+```
 
-## What technologies are used for this project?
+The compiled static files will be located in the `dist` directory.
 
-This project is built with:
+### Code Linting
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+To lint the code:
 
-## How can I deploy this project?
+Using npm:
+```bash
+npm run lint
+```
+Alternatively, using Bun:
+```bash
+bun lint
+```
 
-Simply open [Lovable](https://lovable.dev/projects/b02e4dd0-4905-421e-9851-ce4b3887fb7f) and click on Share -> Publish.
+## Project Structure
 
-## Can I connect a custom domain to my Lovable project?
+```
+.
+├── public/                # Static assets (favicon, robots.txt)
+├── src/
+│   ├── assets/            # Project images
+│   ├── components/        # Reusable React components (DriversSection, Footer, Hero, etc.)
+│   │   └── ui/            # Shadcn UI components (accordion, button, card, dialog, etc.)
+│   ├── hooks/             # Custom React hooks
+│   ├── lib/               # Utility functions
+│   ├── pages/             # Page-specific components (Drivers, Index, Schedule, Standings, Teams)
+│   ├── App.tsx            # Main application component
+│   ├── main.tsx           # Entry point for the React application
+│   └── index.css          # Global styles
+├── tailwind.config.ts     # Tailwind CSS configuration
+├── vite.config.ts         # Vite build tool configuration
+├── package.json           # Project dependencies and scripts
+├── tsconfig.json          # TypeScript configuration
+└── ...
+```
 
-Yes, you can!
+## Contributing
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Contributions are welcome! If you have suggestions for improvements or new features, please feel free to:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/your-feature-name`).
+3.  Make your changes.
+4.  Commit your changes (`git commit -m 'feat: Add new feature'`).
+5.  Push to the branch (`git push origin feature/your-feature-name`).
+6.  Open a Pull Request.
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
