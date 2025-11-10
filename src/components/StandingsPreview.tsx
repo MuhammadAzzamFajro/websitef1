@@ -183,7 +183,7 @@ const StandingsPreview = ({
                   <th className="text-left p-4 font-semibold">Pembalap</th>
                   <th className="text-left p-4 font-semibold">Tim</th>
                   <th className="text-right p-4 font-semibold">Poin</th>
-                  <th className="text-center p-4 font-semibold">Tren</th>
+                  <th className="text-center p-4 font-semibold">Negara</th>
                 </tr>
               </thead>
               <tbody>
