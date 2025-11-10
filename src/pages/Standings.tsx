@@ -13,7 +13,7 @@ const Standings = () => {
             ← Kembali ke Beranda
           </a>
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            Klasemen <span className="text-primary">Pembalap 2024</span>
+            Klasemen <span className="text-primary">Pembalap 2025</span>
           </h1>
           <p className="text-muted-foreground text-lg">
             Posisi lengkap klasemen kejuaraan dunia Formula 1

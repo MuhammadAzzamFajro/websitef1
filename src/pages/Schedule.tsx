@@ -16,7 +16,7 @@ const Schedule = () => {
             Kalender <span className="text-primary">Lengkap</span>
           </h1>
           <p className="text-muted-foreground text-lg">
-            Jadwal lengkap semua Grand Prix Formula 1 musim 2024
+            Jadwal lengkap semua Grand Prix Formula 1 musim 2025
           </p>
         </div>
       </div>

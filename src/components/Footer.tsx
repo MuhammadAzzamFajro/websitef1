@@ -11,7 +11,7 @@ const Footer = () => {
           </div>
           
           <p className="text-sm text-muted-foreground text-center md:text-left">
-            © 2024 F1 Hub. Informasi seputar Formula 1. Semua data bersifat ilustrasi.
+            © 2025 F1 Hub. Informasi seputar Formula 1.
           </p>
           
           <div className="flex gap-4 text-sm text-muted-foreground">
