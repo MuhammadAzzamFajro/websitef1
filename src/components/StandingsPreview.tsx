@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Trophy, TrendingUp } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const standings = [
   { position: 1, name: "Lando Norris",        team: "McLaren",         points: 390, nationality: "Inggris" },
@@ -31,6 +33,7 @@ interface StandingsPreviewProps {
 }
 
 const StandingsPreview = ({ limit, showViewMore = false }: StandingsPreviewProps) => {
+  const navigate = useNavigate()
   const displayedStandings = limit ? standings.slice(0, limit) : standings;
 
   return (
@@ -98,15 +101,10 @@ const StandingsPreview = ({ limit, showViewMore = false }: StandingsPreviewProps
         </Card>
 
         {showViewMore && (
-          <div className="mt-12 text-center">
-            <a 
-              href="/standings" 
-              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all h-11 px-8"
-            >
-              Lihat Selengkapnya
-            </a>
-          </div>
-        )}
+      <Button onClick={() => navigate("/standings")}>
+        Lihat Selengkapnya
+      </Button>
+    )}
       </div>
     </section>
   );

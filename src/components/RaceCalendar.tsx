@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Clock } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const races = [
   {
@@ -203,6 +205,7 @@ interface RaceCalendarProps {
 }
 
 const RaceCalendar = ({ limit, showViewMore = false }: RaceCalendarProps) => {
+  const navigate= useNavigate()
   const displayedRaces = limit ? races.slice(0, limit) : races;
 
   return (
@@ -265,15 +268,10 @@ const RaceCalendar = ({ limit, showViewMore = false }: RaceCalendarProps) => {
         </div>
 
         {showViewMore && (
-          <div className="mt-12 text-center">
-            <a
-              href="/schedule"
-              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all h-11 px-8"
-            >
-              Lihat Selengkapnya
-            </a>
-          </div>
-        )}
+      <Button onClick={() => navigate("/schedule")}>
+        Lihat Selengkapnya
+      </Button>
+    )}
       </div>
     </section>
   );

@@ -1,5 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Users, Award } from "lucide-react";
+import { useNavigate } from "react-router-dom"
+import { Button } from "./ui/button";
+
 
 const teams = [
   { 
@@ -89,6 +92,7 @@ interface TeamsSectionProps {
 }
 
 const TeamsSection = ({ limit, showViewMore = false }: TeamsSectionProps) => {
+  const navigate = useNavigate()
   const displayedTeams = limit ? teams.slice(0, limit) : teams;
 
   return (
@@ -156,16 +160,11 @@ const TeamsSection = ({ limit, showViewMore = false }: TeamsSectionProps) => {
           ))}
         </div>
 
-        {showViewMore && (
-          <div className="mt-12 text-center">
-            <a 
-              href="/teams" 
-              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all h-11 px-8"
-            >
-              Lihat Selengkapnya
-            </a>
-          </div>
-        )}
+         {showViewMore && (
+      <Button onClick={() => navigate("/teams")}>
+        Lihat Selengkapnya
+      </Button>
+    )}
       </div>
     </section>
   );
