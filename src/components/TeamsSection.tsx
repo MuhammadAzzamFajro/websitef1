@@ -1,98 +1,97 @@
 import { Card } from "@/components/ui/card";
 import { Users, Award } from "lucide-react";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 
-
 const teams = [
-  { 
-    name: "McLaren", 
-    base: "Woking, UK", 
+  {
+    name: "McLaren",
+    base: "Woking, UK",
     teamPrincipal: "Andrea Stella",
     championships: 8,
     points: 756,
-    drivers: ["Lando Norris", "Oscar Piastri"]
+    drivers: ["Lando Norris", "Oscar Piastri"],
   },
-  { 
-    name: "Mercedes", 
-    base: "Brackley, UK", 
+  {
+    name: "Mercedes",
+    base: "Brackley, UK",
     teamPrincipal: "Toto Wolff",
     championships: 8,
     points: 398,
-    drivers: ["George Russell", "Kimi Antonelli"]
+    drivers: ["George Russell", "Kimi Antonelli"],
   },
-  { 
-    name: "Red Bull Racing", 
-    base: "Milton Keynes, UK", 
+  {
+    name: "Red Bull Racing",
+    base: "Milton Keynes, UK",
     teamPrincipal: "Christian Horner",
     championships: 6,
     points: 369,
-    drivers: ["Max Verstappen", "Yuki Tsunoda"]
+    drivers: ["Max Verstappen", "Yuki Tsunoda"],
   },
-  { 
-    name: "Ferrari", 
-    base: "Maranello, Italia", 
+  {
+    name: "Ferrari",
+    base: "Maranello, Italia",
     teamPrincipal: "Frédéric Vasseur",
     championships: 16,
     points: 362,
-    drivers: ["Charles Leclerc", "Lewis Hamilton"]
+    drivers: ["Charles Leclerc", "Lewis Hamilton"],
   },
-  { 
-    name: "Williams", 
-    base: "Grove, UK", 
+  {
+    name: "Williams",
+    base: "Grove, UK",
     teamPrincipal: "James Vowles",
     championships: 9,
     points: 111,
-    drivers: ["Carlos Sainz", "Alexander Albon"]
+    drivers: ["Carlos Sainz", "Alexander Albon"],
   },
-  { 
-    name: "Racing Bulls", 
-    base: "Faenza, Italia", 
+  {
+    name: "Racing Bulls",
+    base: "Faenza, Italia",
     teamPrincipal: "Laurent Mekies",
     championships: 0,
     points: 79,
-    drivers: ["Liam Lawson", "Isack Hadjar"]
+    drivers: ["Liam Lawson", "Isack Hadjar"],
   },
-  { 
-    name: "Aston Martin", 
-    base: "Silverstone, UK", 
+  {
+    name: "Aston Martin",
+    base: "Silverstone, UK",
     teamPrincipal: "Mike Krack",
     championships: 0,
     points: 72,
-    drivers: ["Fernando Alonso", "Lance Stroll"]
+    drivers: ["Fernando Alonso", "Lance Stroll"],
   },
-  { 
-    name: "Haas F1 Team", 
-    base: "Kannapolis, USA", 
+  {
+    name: "Haas F1 Team",
+    base: "Kannapolis, USA",
     teamPrincipal: "Ayao Komatsu",
     championships: 0,
     points: 70,
-    drivers: ["Esteban Ocon", "Oliver Bearman"]
+    drivers: ["Esteban Ocon", "Oliver Bearman"],
   },
-  { 
-    name: "Kick Sauber", 
-    base: "Hinwil, Swiss", 
+  {
+    name: "Kick Sauber",
+    base: "Hinwil, Swiss",
     teamPrincipal: "Alessandro Alunni Bravi",
     championships: 0,
     points: 62,
-    drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"]
+    drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"],
   },
-  { 
-    name: "Alpine", 
-    base: "Enstone, UK", 
+  {
+    name: "Alpine",
+    base: "Enstone, UK",
     teamPrincipal: "Oliver Oakes",
     championships: 2,
     points: 22,
-    drivers: ["Pierre Gasly", "Franco Colapinto"]
-  }
-]
+    drivers: ["Pierre Gasly", "Franco Colapinto"],
+  },
+];
 interface TeamsSectionProps {
   limit?: number;
   showViewMore?: boolean;
 }
 
 const TeamsSection = ({ limit, showViewMore = false }: TeamsSectionProps) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const displayedTeams = limit ? teams.slice(0, limit) : teams;
 
   return (
@@ -109,7 +108,7 @@ const TeamsSection = ({ limit, showViewMore = false }: TeamsSectionProps) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {displayedTeams.map((team) => (
-            <Card 
+            <Card
               key={team.name}
               className="group bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(0_100%_44%/0.2)]"
             >
@@ -117,17 +116,23 @@ const TeamsSection = ({ limit, showViewMore = false }: TeamsSectionProps) => {
                 <div className="flex items-start justify-between mb-6">
                   <div>
                     <h3 className="text-2xl font-bold mb-2">{team.name}</h3>
-                    <p className="text-sm text-muted-foreground">📍 {team.base}</p>
+                    <p className="text-sm text-muted-foreground">
+                      📍 {team.base}
+                    </p>
                   </div>
                   <div className="flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full">
                     <Award className="h-4 w-4 text-primary" />
-                    <span className="text-sm font-bold">{team.championships}x</span>
+                    <span className="text-sm font-bold">
+                      {team.championships}x
+                    </span>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <p className="text-xs text-muted-foreground mb-1">Team Principal</p>
+                    <p className="text-xs text-muted-foreground mb-1">
+                      Team Principal
+                    </p>
                     <p className="font-semibold">{team.teamPrincipal}</p>
                   </div>
 
@@ -138,7 +143,7 @@ const TeamsSection = ({ limit, showViewMore = false }: TeamsSectionProps) => {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {team.drivers.map((driver) => (
-                        <span 
+                        <span
                           key={driver}
                           className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
                         >
@@ -150,8 +155,12 @@ const TeamsSection = ({ limit, showViewMore = false }: TeamsSectionProps) => {
 
                   <div className="pt-4 border-t border-border">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">Total Poin</span>
-                      <span className="text-2xl font-bold text-primary">{team.points}</span>
+                      <span className="text-sm text-muted-foreground">
+                        Total Poin
+                      </span>
+                      <span className="text-2xl font-bold text-primary">
+                        {team.points}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -160,11 +169,16 @@ const TeamsSection = ({ limit, showViewMore = false }: TeamsSectionProps) => {
           ))}
         </div>
 
-         {showViewMore && (
-      <Button onClick={() => navigate("/teams")}>
-        Lihat Selengkapnya
-      </Button>
-    )}
+        {showViewMore && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => navigate("/schedule")}
+              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all h-11 px-8"
+            >
+              Lihat Selengkapnya
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

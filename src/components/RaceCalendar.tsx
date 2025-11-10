@@ -125,7 +125,7 @@ const races = [
     date: "1-3 Aug 2025",
     status: "completed",
   },
-    {
+  {
     round: 16,
     name: "Italian Grand Prix",
     location: "Monza",
@@ -196,7 +196,7 @@ const races = [
     country: "United Arab Emirates",
     date: "5-7 Des 2025",
     status: "upcoming",
-  }
+  },
 ];
 
 interface RaceCalendarProps {
@@ -205,7 +205,7 @@ interface RaceCalendarProps {
 }
 
 const RaceCalendar = ({ limit, showViewMore = false }: RaceCalendarProps) => {
-  const navigate= useNavigate()
+  const navigate = useNavigate();
   const displayedRaces = limit ? races.slice(0, limit) : races;
 
   return (
@@ -268,10 +268,15 @@ const RaceCalendar = ({ limit, showViewMore = false }: RaceCalendarProps) => {
         </div>
 
         {showViewMore && (
-      <Button onClick={() => navigate("/schedule")}>
-        Lihat Selengkapnya
-      </Button>
-    )}
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => navigate("/schedule")}
+              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all h-11 px-8"
+            >
+              Lihat Selengkapnya
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
