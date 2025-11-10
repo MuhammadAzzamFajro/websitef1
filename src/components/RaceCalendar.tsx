@@ -3,59 +3,210 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Clock } from "lucide-react";
 
 const races = [
-  { 
-    round: 1, 
-    name: "Bahrain Grand Prix", 
-    location: "Sakhir", 
-    country: "Bahrain",
-    date: "2 Mar 2024",
-    status: "completed"
-  },
-  { 
-    round: 2, 
-    name: "Saudi Arabian Grand Prix", 
-    location: "Jeddah", 
-    country: "Saudi Arabia",
-    date: "9 Mar 2024",
-    status: "completed"
-  },
-  { 
-    round: 3, 
-    name: "Australian Grand Prix", 
-    location: "Melbourne", 
+  {
+    round: 1,
+    name: "Australian Grand Prix",
+    location: "Melbourne",
     country: "Australia",
-    date: "24 Mar 2024",
-    status: "completed"
+    date: "14-16 Mar 2025",
+    status: "completed",
   },
-  { 
-    round: 4, 
-    name: "Japanese Grand Prix", 
-    location: "Suzuka", 
-    country: "Japan",
-    date: "7 Apr 2024",
-    status: "upcoming"
-  },
-  { 
-    round: 5, 
-    name: "Chinese Grand Prix", 
-    location: "Shanghai", 
+  {
+    round: 2,
+    name: "Chinese Grand Prix",
+    location: "Shanghai",
     country: "China",
-    date: "21 Apr 2024",
-    status: "upcoming"
+    date: "21-23 Mar 2025",
+    status: "completed",
   },
-  { 
-    round: 6, 
-    name: "Miami Grand Prix", 
-    location: "Miami", 
+  {
+    round: 3,
+    name: "Japanese Grand Prix",
+    location: "Suzuka",
+    country: "Japan",
+    date: "4-6 Apr 2025",
+    status: "completed",
+  },
+  {
+    round: 4,
+    name: "Bahrain Grand Prix",
+    location: "Sakhir",
+    country: "Bahrain",
+    date: "11-13 Apr 2025",
+    status: "completed",
+  },
+  {
+    round: 5,
+    name: "Saudi Arabian Grand Prix",
+    location: "Jeddah",
+    country: "Saudi Arabia",
+    date: "18-20 Apr 2025",
+    status: "completed",
+  },
+  {
+    round: 6,
+    name: "Miami Grand Prix",
+    location: "Miami",
     country: "USA",
-    date: "5 Mei 2024",
-    status: "upcoming"
+    date: "2-4 Mei 2025",
+    status: "completed",
   },
+  {
+    round: 7,
+    name: "Emilia Romagna Grand Prix",
+    location: "Imola",
+    country: "Italy",
+    date: "9-11 Mei 2025",
+    status: "completed",
+  },
+  {
+    round: 8,
+    name: "Monaco Grand Prix",
+    location: "Monte Carlo",
+    country: "Monaco",
+    date: "23-25 Mei 2025",
+    status: "completed",
+  },
+  {
+    round: 9,
+    name: "Spanish Grand Prix",
+    location: "Barcelona",
+    country: "Spain",
+    date: "6-8 Jun 2025",
+    status: "completed",
+  },
+  {
+    round: 10,
+    name: "Canadian Grand Prix",
+    location: "Montreal",
+    country: "Canada",
+    date: "13-15 Jun 2025",
+    status: "completed",
+  },
+  {
+    round: 11,
+    name: "Austrian Grand Prix",
+    location: "Spielberg",
+    country: "Austria",
+    date: "27-29 Jun 2025",
+    status: "completed",
+  },
+  {
+    round: 12,
+    name: "British Grand Prix",
+    location: "Silverstone",
+    country: "United Kingdom",
+    date: "4-6 Jul 2025",
+    status: "completed",
+  },
+  {
+    round: 13,
+    name: "Hungarian Grand Prix",
+    location: "Budapest",
+    country: "Hungary",
+    date: "18-20 Jul 2025",
+    status: "completed",
+  },
+  {
+    round: 14,
+    name: "Belgian Grand Prix",
+    location: "Spa-Francorchamps",
+    country: "Belgium",
+    date: "25-27 Jul 2025",
+    status: "completed",
+  },
+  {
+    round: 15,
+    name: "Dutch Grand Prix",
+    location: "Zandvoort",
+    country: "Netherlands",
+    date: "1-3 Aug 2025",
+    status: "completed",
+  },
+    {
+    round: 16,
+    name: "Italian Grand Prix",
+    location: "Monza",
+    country: "Italy",
+    date: "5-7 Sep 2025",
+    status: "completed",
+  },
+  {
+    round: 17,
+    name: "Azerbaijan Grand Prix",
+    location: "Baku",
+    country: "Azerbaijan",
+    date: "19-21 Sep 2025",
+    status: "completed",
+  },
+  {
+    round: 18,
+    name: "Singapore Grand Prix",
+    location: "Marina Bay",
+    country: "Singapore",
+    date: "3-5 Okt 2025",
+    status: "completed",
+  },
+  {
+    round: 19,
+    name: "United States Grand Prix",
+    location: "Austin",
+    country: "USA",
+    date: "17-19 Okt 2025",
+    status: "completed",
+  },
+  {
+    round: 20,
+    name: "Mexico City Grand Prix",
+    location: "Mexico City",
+    country: "Mexico",
+    date: "24-26 Okt 2025",
+    status: "completed",
+  },
+  {
+    round: 21,
+    name: "São Paulo Grand Prix",
+    location: "Interlagos",
+    country: "Brazil",
+    date: "7-9 Nov 2025",
+    status: "completed",
+  },
+  {
+    round: 22,
+    name: "Las Vegas Grand Prix",
+    location: "Las Vegas",
+    country: "USA",
+    date: "21-23 Nov 2025",
+    status: "upcoming",
+  },
+  {
+    round: 23,
+    name: "Qatar Grand Prix",
+    location: "Lusail",
+    country: "Qatar",
+    date: "28-30 Nov 2025",
+    status: "upcoming",
+  },
+  {
+    round: 24,
+    name: "Abu Dhabi Grand Prix",
+    location: "Yas Marina",
+    country: "United Arab Emirates",
+    date: "5-7 Des 2025",
+    status: "upcoming",
+  }
 ];
 
-const RaceCalendar = () => {
+interface RaceCalendarProps {
+  limit?: number;
+  showViewMore?: boolean;
+}
+
+const RaceCalendar = ({ limit, showViewMore = false }: RaceCalendarProps) => {
+  const displayedRaces = limit ? races.slice(0, limit) : races;
+
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="schedule" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto">
         <div className="mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -67,11 +218,11 @@ const RaceCalendar = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {races.map((race) => (
-            <Card 
+          {displayedRaces.map((race) => (
+            <Card
               key={race.round}
               className={`group bg-card border-border transition-all duration-300 hover:shadow-lg ${
-                race.status === 'upcoming' ? 'hover:border-primary/50' : ''
+                race.status === "upcoming" ? "hover:border-primary/50" : ""
               }`}
             >
               <div className="p-5">
@@ -81,18 +232,26 @@ const RaceCalendar = () => {
                       {race.round}
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg leading-tight">{race.name}</h3>
+                      <h3 className="font-bold text-lg leading-tight">
+                        {race.name}
+                      </h3>
                       <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
                         <MapPin className="h-3 w-3" />
                         {race.location}, {race.country}
                       </p>
                     </div>
                   </div>
-                  <Badge 
-                    variant={race.status === 'completed' ? 'secondary' : 'default'}
-                    className={race.status === 'upcoming' ? 'bg-primary/20 text-primary' : ''}
+                  <Badge
+                    variant={
+                      race.status === "completed" ? "secondary" : "default"
+                    }
+                    className={
+                      race.status === "upcoming"
+                        ? "bg-primary/20 text-primary"
+                        : ""
+                    }
                   >
-                    {race.status === 'completed' ? 'Selesai' : 'Mendatang'}
+                    {race.status === "completed" ? "Selesai" : "Mendatang"}
                   </Badge>
                 </div>
 
@@ -104,6 +263,17 @@ const RaceCalendar = () => {
             </Card>
           ))}
         </div>
+
+        {showViewMore && (
+          <div className="mt-12 text-center">
+            <a
+              href="/schedule"
+              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all h-11 px-8"
+            >
+              Lihat Selengkapnya
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -3,14 +3,36 @@ import { Badge } from "@/components/ui/badge";
 import { Trophy, TrendingUp } from "lucide-react";
 
 const standings = [
-  { position: 1, name: "Max Verstappen", team: "Red Bull Racing", points: 575, change: 0 },
-  { position: 2, name: "Charles Leclerc", team: "Ferrari", points: 307, change: 1 },
-  { position: 3, name: "Carlos Sainz", team: "Ferrari", points: 244, change: -1 },
-  { position: 4, name: "Lewis Hamilton", team: "Mercedes", points: 234, change: 0 },
-  { position: 5, name: "Lando Norris", team: "McLaren", points: 205, change: 2 },
+  { position: 1, name: "Lando Norris",        team: "McLaren",         points: 390, nationality: "Inggris" },
+  { position: 2, name: "Oscar Piastri",       team: "Mclaren",         points: 366, nationality: "Australia" },
+  { position: 3, name: "Max Verstappen",      team: "Red Bull Racing", points: 341, nationality: "Belanda" },
+  { position: 4, name: "George Russel",       team: "Mercedes",        points: 276, nationality: "Inggris" },
+  { position: 5, name: "Charles Leclerc",     team: "Ferrari",         points: 214, nationality: "Monaco" },
+  { position: 6,  name: "Lewis Hamilton",     team: "Ferrari",         points: 148, nationality: "Inggris" },
+  { position: 7,  name: "Kimi Antonelli",     team: "Mercedes",        points: 122, nationality: "Italia" },
+  { position: 8,  name: "Alexander Albon",    team: "Williams",        points: 73,  nationality: "Thailand" },
+  { position: 9,  name: "Nico Hülkenberg",    team: "Sauber",          points: 43,  nationality: "Jerman" },
+  { position:10,  name: "Isack Hadjar",       team: "Racing Bulls",    points: 43,  nationality: "Prancis" },
+  { position:11,  name: "Oliver Bearman",     team: "Haas",            points: 40,  nationality: "Inggris" },
+  { position:12,  name: "Fernando Alonso",    team: "Aston Martin",    points: 40,  nationality: "Spanyol" },
+  { position:13,  name: "Carlos Sainz",       team: "Williams",        points: 38,  nationality: "Spanyol" },
+  { position:14,  name: "Liam Lawson",        team: "Racing Bulls",    points: 36,  nationality: "New Zealand" },
+  { position:15,  name: "Lance Stroll",       team: "Aston Martin",    points: 32,  nationality: "Kanada" },
+  { position:16,  name: "Esteban Ocon",       team: "Haas",            points: 30,  nationality: "Prancis" },
+  { position:17,  name: "Yuki Tsunoda",       team: "Red Bull Racing", points: 28,  nationality: "Jepang" },
+  { position:18,  name: "Pierre Gasly",       team: "Alpine",          points: 22,  nationality: "Prancis" },
+  { position:19,  name: "Gabriel Bortoleto",  team: "Sauber",          points: 19,  nationality: "Brasil" },
+  { position:20,  name: "Franco Colapinto",   team: "Alpine",          points: 0,   nationality: "Argentina" }
 ];
 
-const StandingsPreview = () => {
+interface StandingsPreviewProps {
+  limit?: number;
+  showViewMore?: boolean;
+}
+
+const StandingsPreview = ({ limit, showViewMore = false }: StandingsPreviewProps) => {
+  const displayedStandings = limit ? standings.slice(0, limit) : standings;
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="container mx-auto">
@@ -39,7 +61,7 @@ const StandingsPreview = () => {
                 </tr>
               </thead>
               <tbody>
-                {standings.map((driver, index) => (
+                {displayedStandings.map((driver, index) => (
                   <tr 
                     key={driver.position}
                     className={`border-b border-border last:border-0 hover:bg-secondary/30 transition-colors ${
@@ -65,19 +87,7 @@ const StandingsPreview = () => {
                     </td>
                     <td className="p-4">
                       <div className="flex justify-center">
-                        {driver.change === 0 ? (
-                          <Badge variant="secondary" className="w-8 h-8 rounded-full p-0 flex items-center justify-center">
-                            -
-                          </Badge>
-                        ) : driver.change > 0 ? (
-                          <Badge className="bg-green-500/20 text-green-500 w-8 h-8 rounded-full p-0 flex items-center justify-center">
-                            +{driver.change}
-                          </Badge>
-                        ) : (
-                          <Badge className="bg-red-500/20 text-red-500 w-8 h-8 rounded-full p-0 flex items-center justify-center">
-                            {driver.change}
-                          </Badge>
-                        )}
+                        <span className="text-sm font-medium">{driver.nationality}</span>
                       </div>
                     </td>
                   </tr>
@@ -86,6 +96,17 @@ const StandingsPreview = () => {
             </table>
           </div>
         </Card>
+
+        {showViewMore && (
+          <div className="mt-12 text-center">
+            <a 
+              href="/standings" 
+              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all h-11 px-8"
+            >
+              Lihat Selengkapnya
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

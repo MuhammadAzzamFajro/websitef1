@@ -3,40 +3,94 @@ import { Users, Award } from "lucide-react";
 
 const teams = [
   { 
-    name: "Red Bull Racing", 
-    base: "Milton Keynes, UK", 
-    teamPrincipal: "Christian Horner",
-    championships: 6,
-    points: 860,
-    drivers: ["Max Verstappen", "Sergio Pérez"]
+    name: "McLaren", 
+    base: "Woking, UK", 
+    teamPrincipal: "Andrea Stella",
+    championships: 8,
+    points: 756,
+    drivers: ["Lando Norris", "Oscar Piastri"]
   },
   { 
     name: "Mercedes", 
     base: "Brackley, UK", 
     teamPrincipal: "Toto Wolff",
     championships: 8,
-    points: 409,
-    drivers: ["Lewis Hamilton", "George Russell"]
+    points: 398,
+    drivers: ["George Russell", "Kimi Antonelli"]
+  },
+  { 
+    name: "Red Bull Racing", 
+    base: "Milton Keynes, UK", 
+    teamPrincipal: "Christian Horner",
+    championships: 6,
+    points: 369,
+    drivers: ["Max Verstappen", "Yuki Tsunoda"]
   },
   { 
     name: "Ferrari", 
     base: "Maranello, Italia", 
     teamPrincipal: "Frédéric Vasseur",
     championships: 16,
-    points: 551,
-    drivers: ["Charles Leclerc", "Carlos Sainz"]
+    points: 362,
+    drivers: ["Charles Leclerc", "Lewis Hamilton"]
   },
   { 
-    name: "McLaren", 
-    base: "Woking, UK", 
-    teamPrincipal: "Andrea Stella",
-    championships: 8,
-    points: 438,
-    drivers: ["Lando Norris", "Oscar Piastri"]
+    name: "Williams", 
+    base: "Grove, UK", 
+    teamPrincipal: "James Vowles",
+    championships: 9,
+    points: 111,
+    drivers: ["Carlos Sainz", "Alexander Albon"]
   },
-];
+  { 
+    name: "Racing Bulls", 
+    base: "Faenza, Italia", 
+    teamPrincipal: "Laurent Mekies",
+    championships: 0,
+    points: 79,
+    drivers: ["Liam Lawson", "Isack Hadjar"]
+  },
+  { 
+    name: "Aston Martin", 
+    base: "Silverstone, UK", 
+    teamPrincipal: "Mike Krack",
+    championships: 0,
+    points: 72,
+    drivers: ["Fernando Alonso", "Lance Stroll"]
+  },
+  { 
+    name: "Haas F1 Team", 
+    base: "Kannapolis, USA", 
+    teamPrincipal: "Ayao Komatsu",
+    championships: 0,
+    points: 70,
+    drivers: ["Esteban Ocon", "Oliver Bearman"]
+  },
+  { 
+    name: "Kick Sauber", 
+    base: "Hinwil, Swiss", 
+    teamPrincipal: "Alessandro Alunni Bravi",
+    championships: 0,
+    points: 62,
+    drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"]
+  },
+  { 
+    name: "Alpine", 
+    base: "Enstone, UK", 
+    teamPrincipal: "Oliver Oakes",
+    championships: 2,
+    points: 22,
+    drivers: ["Pierre Gasly", "Franco Colapinto"]
+  }
+]
+interface TeamsSectionProps {
+  limit?: number;
+  showViewMore?: boolean;
+}
 
-const TeamsSection = () => {
+const TeamsSection = ({ limit, showViewMore = false }: TeamsSectionProps) => {
+  const displayedTeams = limit ? teams.slice(0, limit) : teams;
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="container mx-auto">
@@ -50,7 +104,7 @@ const TeamsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {teams.map((team) => (
+          {displayedTeams.map((team) => (
             <Card 
               key={team.name}
               className="group bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(0_100%_44%/0.2)]"
@@ -101,6 +155,17 @@ const TeamsSection = () => {
             </Card>
           ))}
         </div>
+
+        {showViewMore && (
+          <div className="mt-12 text-center">
+            <a 
+              href="/teams" 
+              className="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all h-11 px-8"
+            >
+              Lihat Selengkapnya
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );
