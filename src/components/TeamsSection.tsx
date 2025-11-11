@@ -23,7 +23,7 @@ const teams = [
   {
     name: "Red Bull Racing",
     base: "Milton Keynes, UK",
-    teamPrincipal: "Christian Horner",
+    teamPrincipal: "Laurent Mekies",
     championships: 6,
     points: 369,
     drivers: ["Max Verstappen", "Yuki Tsunoda"],
@@ -47,7 +47,7 @@ const teams = [
   {
     name: "Racing Bulls",
     base: "Faenza, Italia",
-    teamPrincipal: "Laurent Mekies",
+    teamPrincipal: "Alan permane",
     championships: 0,
     points: 79,
     drivers: ["Liam Lawson", "Isack Hadjar"],
@@ -71,7 +71,7 @@ const teams = [
   {
     name: "Kick Sauber",
     base: "Hinwil, Swiss",
-    teamPrincipal: "Alessandro Alunni Bravi",
+    teamPrincipal: "Jonathan Wheatley",
     championships: 0,
     points: 62,
     drivers: ["Nico Hulkenberg", "Gabriel Bortoleto"],
@@ -79,7 +79,7 @@ const teams = [
   {
     name: "Alpine",
     base: "Enstone, UK",
-    teamPrincipal: "Oliver Oakes",
+    teamPrincipal: "Flavio Briatore",
     championships: 2,
     points: 22,
     drivers: ["Pierre Gasly", "Franco Colapinto"],
