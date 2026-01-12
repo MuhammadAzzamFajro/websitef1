@@ -9,6 +9,9 @@ import Teams from "./pages/Teams";
 import Schedule from "./pages/Schedule";
 import Standings from "./pages/Standings";
 import NotFound from "./pages/NotFound";
+import AdminLoginPage from "./pages/admin/login";
+import F1AdminDashboard from "./app/dashboard";
+import LiveData from "./pages/LiveData";
 
 
 const queryClient = new QueryClient();
@@ -25,6 +28,9 @@ const App = () => (
           <Route path="/teams" element={<Teams />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/standings" element={<Standings />} />
+          <Route path="/live" element={<LiveData />} />
+          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin/dashboard" element={<F1AdminDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#0a0a0a]">
       <Hero />
       <DriversSection limit={6} showViewMore={true} />
       <TeamsSection limit={2} showViewMore={true} />
